@@ -7,6 +7,7 @@ public class HomeScreen {
         while (true) {
             System.out.println("\n=== 🥪 DELI-cious Sandwich Shop 🥤 ===");
             System.out.println("1) 🆕 New Order");
+            System.out.println("2) 🆕 Use Template Order");
             System.out.println("0) ❌ Exit");
             System.out.print("Choose an option: ");
 
