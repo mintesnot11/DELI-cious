@@ -30,14 +30,27 @@ public class CheckoutScreen {
 
     private void saveReceipt(Order order) {
         try {
+
+            java.io.File dir = new java.io.File("receipts");
+            if (!dir.exists()) {
+                dir.mkdirs();  // This creates the folder
+            }
+
+
             String timestamp = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
             String filename = "receipts/" + timestamp + ".txt";
+
 
             FileWriter writer = new FileWriter(filename);
             writer.write(order.getOrderSummary());
             writer.close();
+
+
+            System.out.println("📄 Receipt saved to: " + filename);
+
         } catch (IOException e) {
-            System.out.println("Error saving receipt: " + e.getMessage());
+            System.out.println("❌ Error saving receipt: " + e.getMessage());
         }
     }
+
 }

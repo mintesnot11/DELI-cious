@@ -1,52 +1,42 @@
-// src/OrderScreen.java
 import java.util.Scanner;
 
 public class OrderScreen {
-    private final Scanner scanner;
-    private final Order order;
+    private Order order = new Order();
 
-    public OrderScreen(Scanner scanner, Order order) {
-        this.scanner = scanner;
-        this.order = order;
-    }
+    public void show() {
+        Scanner scanner = new Scanner(System.in);
 
-    public void display() {
-        boolean ordering = true;
-
-        while (ordering) {
-            System.out.println("\n--- ORDER MENU ---");
-            System.out.println("1) Add Sandwich");
-            System.out.println("2) Add Drink");
-            System.out.println("3) Add Chips");
-            System.out.println("4) Checkout");
-            System.out.println("0) Cancel Order");
+        while (true) {
+            System.out.println("\n--- 🛒 ORDER MENU ---");
+            System.out.println("1) 🥪 Add Sandwich");
+            System.out.println("2) 🥤 Add Drink");
+            System.out.println("3) 🍟 Add Chips");
+            System.out.println("4) 💰 Checkout");
+            System.out.println("0) ❌ Cancel Order");
             System.out.print("Choose an option: ");
-            String choice = scanner.nextLine();
+
+            int choice = InputValidator.getIntInput(scanner, 0, 4);
 
             switch (choice) {
-                case "1":
-                    AddSandwichScreen sandwichScreen = new AddSandwichScreen(scanner, order);
-                    sandwichScreen.display();
+                case 1:
+                    AddSandwichScreen sandwichScreen = new AddSandwichScreen(order);
+                    sandwichScreen.show();
                     break;
-                case "2":
-                    AddDrinkScreen drinkScreen = new AddDrinkScreen(scanner, order);
-                    drinkScreen.display();
+                case 2:
+                    AddDrinkScreen drinkScreen = new AddDrinkScreen(order);
+                    drinkScreen.show();
                     break;
-                case "3":
-                    AddChipsScreen chipsScreen = new AddChipsScreen(scanner, order);
-                    chipsScreen.display();
+                case 3:
+                    AddChipsScreen chipsScreen = new AddChipsScreen(order);
+                    chipsScreen.show();
                     break;
-                case "4":
+                case 4:
                     CheckoutScreen checkoutScreen = new CheckoutScreen(scanner, order);
                     checkoutScreen.display();
-                    ordering = false;
-                    break;
-                case "0":
-                    System.out.println("Order cancelled. Returning to Home Screen.");
-                    ordering = false;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+                    return;
+                case 0:
+                    System.out.println("\nOrder cancelled. Returning to main menu. ↩️");
+                    return;
             }
         }
     }

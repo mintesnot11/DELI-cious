@@ -1,23 +1,29 @@
 public class Cheese extends Topping {
+    private boolean extra;
+    private double basePrice;
+    private double extraPrice;
 
-    public Cheese(String name, boolean isExtra) {
-        super(name, isExtra);
+    public Cheese(String name, double basePrice, double extraPrice) {
+        super(name);
+        this.basePrice = basePrice;
+        this.extraPrice = extraPrice;
+    }
+
+    public boolean isExtra() {
+        return extra;
+    }
+
+    public void setExtra(boolean extra) {
+        this.extra = extra;
     }
 
     @Override
-    public double getPrice(String size) {
-        double basePrice = 0;
-        switch (size) {
-            case "4":
-                basePrice = isExtra ? 0.30 : 0.75;
-                break;
-            case "8":
-                basePrice = isExtra ? 0.60 : 1.50;
-                break;
-            case "12":
-                basePrice = isExtra ? 0.90 : 2.25;
-                break;
-        }
-        return basePrice;
+    public double getPrice() {
+        return extra ? extraPrice : basePrice;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + (extra ? " (extra)" : "");
     }
 }

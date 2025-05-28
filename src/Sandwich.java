@@ -2,65 +2,73 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sandwich {
-    private String size;
+    private int size;
     private String breadType;
-    private List<Topping> toppings;
-    private boolean isToasted;
+    private boolean toasted;
+    private double basePrice;
+    private List<Meat> meats = new ArrayList<>();
+    private List<Cheese> cheeses = new ArrayList<>();
+    private List<RegularTopping> toppings = new ArrayList<>();
 
-    public Sandwich(String size, String breadType, boolean isToasted) {
+    public Sandwich(int size, String breadType, boolean toasted, double basePrice) {
         this.size = size;
         this.breadType = breadType;
-        this.isToasted = isToasted;
-        this.toppings = new ArrayList<>();
+        this.toasted = toasted;
+        this.basePrice = basePrice;
     }
 
-    public void addTopping(Topping topping) {
+    public void addMeat(Meat meat) {
+        meats.add(meat);
+    }
+
+    public void addCheese(Cheese cheese) {
+        cheeses.add(cheese);
+    }
+
+    public void addTopping(RegularTopping topping) {
         toppings.add(topping);
     }
 
-    public double calculatePrice() {
-        double price = 0.0;
-
-        // Base bread price
-        switch (size) {
-            case "4":
-                price += 5.50;
-                break;
-            case "8":
-                price += 7.00;
-                break;
-            case "12":
-                price += 8.50;
-                break;
-        }
-
-        // Add price of all toppings
-        for (Topping topping : toppings) {
-            price += topping.getPrice(size);
-        }
-
+    public double getPrice() {
+        double price = basePrice;
+        for (Meat m : meats) price += m.getPrice();
+        for (Cheese c : cheeses) price += c.getPrice();
         return price;
     }
 
     public String getDescription() {
         StringBuilder sb = new StringBuilder();
-        sb.append(size).append("\" ").append(breadType).append(" sandwich\n");
-        sb.append("Toasted: ").append(isToasted ? "Yes" : "No").append("\n");
-        sb.append("Toppings:\n");
-        for (Topping topping : toppings) {
-            sb.append("- ").append(topping.getName());
-            if (topping.isExtra()) {
-                sb.append(" (extra)");
+        sb.append(String.format("%d\" %s sandwich\n", size, breadType));
+        sb.append(String.format("Toasted: %s\n", toasted ? "Yes 🔥" : "No"));
+
+        if (!meats.isEmpty()) {
+            sb.append("Meats:\n");
+            for (Meat m : meats) {
+                sb.append(String.format("- %s%s - $%.2f\n",
+                        m.getName(),
+                        m.isExtra() ? " (extra)" : "",
+                        m.getPrice()));
             }
-            sb.append("\n");
         }
-        sb.append("Price: $").append(String.format("%.2f", calculatePrice()));
+
+        if (!cheeses.isEmpty()) {
+            sb.append("Cheeses:\n");
+            for (Cheese c : cheeses) {
+                sb.append(String.format("- %s%s - $%.2f\n",
+                        c.getName(),
+                        c.isExtra() ? " (extra)" : "",
+                        c.getPrice()));
+            }
+        }
+
+        if (!toppings.isEmpty()) {
+            sb.append("Toppings:\n");
+            for (RegularTopping t : toppings) {
+                sb.append(String.format("- %s\n", t.getName()));
+            }
+        }
+
+        sb.append(String.format("Price: $%.2f", getPrice()));
         return sb.toString();
     }
-
-    // Getters
-    public String getSize() { return size; }
-    public String getBreadType() { return breadType; }
-    public List<Topping> getToppings() { return toppings; }
-    public boolean isToasted() { return isToasted; }
 }

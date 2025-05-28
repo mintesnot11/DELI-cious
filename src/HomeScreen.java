@@ -1,30 +1,25 @@
 import java.util.Scanner;
 
 public class HomeScreen {
-    private final Scanner scanner = new Scanner(System.in);
+    public void show() {
+        Scanner scanner = new Scanner(System.in);
 
-    public void start() {
-        boolean running = true;
-
-        while (running) {
-            System.out.println("=== DELI-cious Sandwich Shop ===");
-            System.out.println("1) New Order");
-            System.out.println("0) Exit");
+        while (true) {
+            System.out.println("\n=== 🥪 DELI-cious Sandwich Shop 🥤 ===");
+            System.out.println("1) 🆕 New Order");
+            System.out.println("0) ❌ Exit");
             System.out.print("Choose an option: ");
-            String choice = scanner.nextLine();
+
+            int choice = InputValidator.getIntInput(scanner, 0, 1);
 
             switch (choice) {
-                case "1":
-                    Order newOrder = new Order();
-                    OrderScreen orderScreen = new OrderScreen(scanner, newOrder);
-                    orderScreen.display();
+                case 1:
+                    OrderScreen orderScreen = new OrderScreen();
+                    orderScreen.show();
                     break;
-                case "0":
-                    System.out.println("Thank you for visiting DELI-cious. Goodbye!");
-                    running = false;
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter 1 or 0.");
+                case 0:
+                    System.out.println("\nThank you for visiting DELI-cious. Goodbye! 👋");
+                    return;
             }
         }
     }

@@ -1,0 +1,16 @@
+---- ORDER SUMMARY ----
+
+Sandwich 1:
+8" white sandwich
+Toasted: Yes
+Toppings:
+- steak (extra)
+- swiss
+- lettuce
+Price: $9.50
+
+medium Strawberry drink - $2.50
+
+Classic chips - $1.50
+
+Total: $13.50

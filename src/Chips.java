@@ -1,18 +1,17 @@
 public class Chips {
     private String type;
+    private double price;
 
-    public Chips(String type) {
+    public Chips(String type, double price) {
         this.type = type;
+        this.price = price;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public double getPrice() {
-        return 1.50;
+        return price;
     }
-
-    public String getDescription() {
-        return type + " chips - $1.50";
-    }
-
-    // Getter
-    public String getType() { return type; }
 }

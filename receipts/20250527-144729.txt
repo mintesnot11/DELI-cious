@@ -1,0 +1,19 @@
+---- ORDER SUMMARY ----
+
+Sandwich 1:
+8" white sandwich
+Toasted: Yes 🔥
+Meats:
+- Ham (extra) - $0.30
+- Chicken - $0.85
+Cheeses:
+- American - $0.50
+Price: $8.65
+
+Drinks:
+- large Cola - $3.00
+
+Chips:
+- BBQ - $1.75
+
+Total: $13.40

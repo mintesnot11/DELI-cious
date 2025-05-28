@@ -1,19 +1,18 @@
 public abstract class Topping {
-    protected String name;
-    protected boolean isExtra;
+    private String name;
 
-    public Topping(String name, boolean isExtra) {
+    public Topping(String name) {
         this.name = name;
-        this.isExtra = isExtra;
     }
 
     public String getName() {
         return name;
     }
 
-    public boolean isExtra() {
-        return isExtra;
-    }
+    public abstract double getPrice();
 
-    public abstract double getPrice(String size);
+    @Override
+    public String toString() {
+        return name;
+    }
 }

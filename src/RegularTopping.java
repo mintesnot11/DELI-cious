@@ -1,11 +1,9 @@
-public class RegularTopping extends Topping {
+public class RegularTopping {
+    private String name;
 
     public RegularTopping(String name) {
-        super(name, false);
+        this.name = name;
     }
 
-    @Override
-    public double getPrice(String size) {
-        return 0.0;
-    }
+    public String getName() { return name; }
 }
