@@ -1,0 +1,12 @@
+---- ORDER SUMMARY ----
+
+Sandwich 1:
+8" white sandwich
+Toasted: Yes 🔥
+Meats:
+- Ham - $0.75
+Cheeses:
+- American - $0.50
+Price: $8.25
+
+Total: $8.25

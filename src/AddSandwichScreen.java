@@ -8,6 +8,10 @@ public class AddSandwichScreen {
         this.order = order;
     }
 
+    double sandwichSizePriceFor4 = 5.50;
+    double sandwichSizePriceFor8 = 7.00;
+    double sandwichSizePriceFor12 = 8.50;
+
     public void show() {
         System.out.println("\n-- Create Your Sandwich --");
 
@@ -23,13 +27,13 @@ public class AddSandwichScreen {
 
         // Size selection
         System.out.println("\n📏 Select sandwich size:");
-        System.out.println("1) 4\" - $5.50");
-        System.out.println("2) 8\" - $7.00");
-        System.out.println("3) 12\" - $8.50");
+        System.out.println("1) 4\" - $" + sandwichSizePriceFor4);
+        System.out.println("2) 8\" - $" + sandwichSizePriceFor8);
+        System.out.println("3) 12\" - $" + sandwichSizePriceFor12);
         System.out.print("Enter choice (1-3): ");
         int sizeChoice = InputValidator.getIntInput(scanner, 1, 3);
         int size = new int[]{4, 8, 12}[sizeChoice-1];
-        double basePrice = new double[]{5.50, 7.00, 8.50}[sizeChoice-1];
+        double basePrice = new double[]{sandwichSizePriceFor4, sandwichSizePriceFor8, sandwichSizePriceFor12}[sizeChoice-1];
 
         // Toasted
         System.out.print("\n🔥 Would you like it toasted? ");
