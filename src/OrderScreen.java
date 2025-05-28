@@ -11,11 +11,12 @@ public class OrderScreen {
             System.out.println("1) 🥪 Add Sandwich");
             System.out.println("2) 🥤 Add Drink");
             System.out.println("3) 🍟 Add Chips");
-            System.out.println("4) 💰 Checkout");
+            System.out.println("4) 🆕 Use Signature Sandwich");
+            System.out.println("5) 💰 Checkout");
             System.out.println("0) ❌ Cancel Order");
             System.out.print("Choose an option: ");
 
-            int choice = InputValidator.getIntInput(scanner, 0, 4);
+            int choice = InputValidator.getIntInput(scanner, 0, 5);
 
             switch (choice) {
                 case 1:
@@ -31,6 +32,10 @@ public class OrderScreen {
                     chipsScreen.show();
                     break;
                 case 4:
+                    SignatureSandwichScreen signatureSandwichScreen = new SignatureSandwichScreen(order);
+                    signatureSandwichScreen.show();
+                    break;
+                case 5:
                     CheckoutScreen checkoutScreen = new CheckoutScreen(scanner, order);
                     checkoutScreen.display();
                     return;

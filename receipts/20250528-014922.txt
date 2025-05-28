@@ -1,0 +1,16 @@
+---- ORDER SUMMARY ----
+
+Sandwich 1:
+8" white sandwich
+Toasted: Yes 🔥
+Meats:
+- bacon - $2.00
+Cheeses:
+- cheddar - $1.00
+Toppings:
+- lettuce
+- tomato
+- ranch
+Price: $43.00
+
+Total: $43.00
