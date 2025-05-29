@@ -1,8 +1,30 @@
 <<<<<<< HEAD
 */this
-=======
-This screen shows the user selecting a new order from the main menu.
-They choose the sandwich size and type of bread to begin building a custom sandwich.
-It’s the first step in the order creation process.
-<img width="664" alt="Image" src="https://github.com/user-attachments/assets/f5fa6692-25bc-4835-9a95-1bf36b222020" />
->>>>>>> 68e5b6cbb00b29f143abbd60dd17c904e183d6bd
+## Screenshots
+
+Main Menu  
+![Main Menu](screenshot/Screenshot%201.png)
+
+Deposit Screen  
+![Deposit Screen](screenshot/Screenshot%202.png)
+
+Payment Screen  
+![Payment Screen](screenshot/screenshot%203.png)
+
+Ledger Screen - Display All Entries  
+![Ledger Screen - All Entries](screenshot/Screenshot%204.png)
+
+Ledger Screen - Deposits Only  
+![Ledger Screen - Deposits Only](screenshot/Screenshot%205.png)
+
+Reports - Month to Date  
+![Reports - Month to Date](screenshot/Screenshot%206.png)
+
+Reports - Previous Month  
+![Reports - Previous Month](screenshot/Screenshot%207.png)
+
+Reports - Year to Date  
+![Reports - Year to Date](screenshot/Screenshot%208.png)
+
+Reports - Previous Year  
+![Reports - Previous Year](screenshot/Screenshot%209.png)
