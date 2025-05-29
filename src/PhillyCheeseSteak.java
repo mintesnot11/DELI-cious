@@ -1,6 +1,6 @@
 public class PhillyCheeseSteak extends SignatureSandwich {
     public PhillyCheeseSteak() {
-        super(8, "white", true, 25);
+        super(8, "white", true, 15);
     }
 
     @Override

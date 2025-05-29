@@ -1,6 +1,6 @@
 public class BLTSandwich extends SignatureSandwich {
     public BLTSandwich() {
-        super(8, "white", true, 40); // Size, bread, toasted
+        super(8, "white", true, 15); // Size, bread, toasted
     }
 
     @Override

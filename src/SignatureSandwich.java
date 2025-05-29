@@ -4,6 +4,5 @@ public abstract class SignatureSandwich extends Sandwich {
         buildSignature();
     }
 
-    // Subclasses must implement this
     protected abstract void buildSignature();
 }
